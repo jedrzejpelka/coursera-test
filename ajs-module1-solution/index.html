@@ -16,14 +16,13 @@
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              class="form-control" ng-model="lunchMenu">
+             <small>(empty items do not count)</small>
          </div>
          <div class="form-group">
              <button class="btn btn-default" ng-click="evaluateLunchMenu();">Check If Too Much</button>
          </div>
-         <div class="form-group message">
-           <!-- Your message can go here. -->
-           {{message}} <br>
-           {{lunchMenu}}
+         <div class="form-group message" ng-style="messageStyle">
+           {{message}}
          </div>
    </div>
    <script type="text/javascript" src="angular.min.js"></script>

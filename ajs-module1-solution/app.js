@@ -1,14 +1,35 @@
 ( function () {
 'use strict';
 
-var lunchCheck = angular.module('LunchCheck', []);
+angular.module('LunchCheck', [])
+.controller('LunchCheckController', ['$scope', LunchCheckController]);
 
-lunchCheck.controller('LunchCheckController', function ($scope) {
-	$scope.lunchMenu = '';
-	$scope.message = '';
+function LunchCheckController($scope) {
+
+	$scope.lunchMenu = ''; // user's input
+	$scope.message = ''; // message to be shown
+	$scope.messageStyle = {}
+
+	// function called by user's button click
 	$scope.evaluateLunchMenu = function () {
-		$scope.message = "zzz";
+
+		// split the list, remove empty items
+		var items = $scope.lunchMenu.split(',')
+			.filter(function (itm) {return itm != '';});
+
+		if (items.length == 0) {
+			$scope.messageStyle = {'color':'red'};
+			$scope.message = "Please enter data first";
+		} else {
+			$scope.messageStyle = {'color':'green'};
+			if (items.length <= 3) {
+				$scope.message = "Enjoy!";
+			} else {
+				$scope.message = "Too much!";
+			}
+		}
 	}
-})
+}
 
 })();
+
