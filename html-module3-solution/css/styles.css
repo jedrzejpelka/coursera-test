@@ -1,0 +1,42 @@
+@media (min-width: 768px) {
+  #collapsable-nav {
+    display: none !important;
+  }
+}
+
+body {
+  background-color: Cornsilk;
+  color: Black;
+}
+
+.navbar {
+  background-color: Bisque;
+}
+
+#collapsable-nav {
+  background-color: BurlyWood;
+  text-align: center;
+}
+
+#nav-list a:hover {
+  background-color: Lavender;
+}
+
+#nav-list a {
+  color: Black;
+}
+
+#main-content section {
+  background-color: Wheat;
+  padding-bottom: 5px;
+  margin: auto;
+}
+
+#main-content section p {
+  text-align: justify;
+  margin: 10px;
+}
+
+#main-content section h3 {
+  text-align: center;
+}
